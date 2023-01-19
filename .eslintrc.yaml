@@ -1,0 +1,6 @@
+rules:
+  semi: ["error", "always"] # 文末のセミコロン
+  quotes: ["error", "double", { "allowTemplateLiterals": true }] #ダブルクオートとテンプレートリテラルを使えるようにする
+  no-console: [0]
+parserOptions:
+  ecmaVersion: 6 # constとか``を使えるようにする

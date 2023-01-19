@@ -1,0 +1,6 @@
+module.exports = {
+  rules: {
+    semi: ["error", "never"], //文末のセミコロン
+    quotes: ["error", "single"], //シングルクオート
+  },
+};

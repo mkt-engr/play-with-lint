@@ -32,12 +32,17 @@ if (aaa === bbb) console.log("object");
 
 // "args": "after-used", ではbazとquxがエラーになる
 // "args": "all", ではfoo,baz,quxがエラーになる
-(function (foo, bar, _baz, qux) {
-  return bar;
-})();
+// (function (foo, bar, _baz, qux) {
+//   return bar;
+// })();
 
 try {
   console.log("try");
 } catch (error) {
-  console.log("error");
+  console.log(error);
 }
+
+const full_name = "makito mori";
+const FULL_NAME = "makito mori";
+
+console.log(full_name, FULL_NAME);

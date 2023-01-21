@@ -6,6 +6,25 @@ rules:
   no-console: [0] # console.logの設定（0は許可）
   eqeqeq: ["error", "always"] # ===の強制
   curly: ["error", "multi", "consistent"] # if文などの中身が２行以上ある時にのみ警告を出す if(condition) return true などは許される
+  no-alert: ["error"] # フロントのalert文を使わない
+  # no-unused-expressions:
+  #   ["error", { "allowShortCircuit": false, "allowTernary": false }]
+  no-unused-vars: # 未使用変数の検知
+    [
+      error,
+      {
+        vars: all, # デフォルト（よくわからん）
+        varsIgnorePattern: "[iI]gnored|^_", #未使用変数の検知を無視する指定（正規表現）
+        # args: after-used, # チェックする変数の数
+        args: after-used, # チェックする変数の数(all,after-used,none)
+        argsIgnorePattern: ^_,
+        caughtErrors: all, # try-catch文のcatchのエラー未使用チェック
+        # caughtErrorsIgnore: "",
+        destructuredArrayIgnorePattern: ^_,
+        ignoreRestSiblings: false,
+      },
+    ]
+
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   #   # ecmaVersion: "latest"

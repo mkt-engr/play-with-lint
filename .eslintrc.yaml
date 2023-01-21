@@ -3,8 +3,9 @@ env:
 rules:
   semi: ["error", "always"] # 文末のセミコロン
   quotes: ["error", "double", { "allowTemplateLiterals": true }] #ダブルクオートとテンプレートリテラルを使えるようにする
-  no-console: [0]
+  no-console: [0] # console.logの設定（0は許可）
   eqeqeq: ["error", "always"] # ===の強制
+  curly: ["error", "multi", "consistent"] # if文などの中身が２行以上ある時にのみ警告を出す if(condition) return true などは許される
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   #   # ecmaVersion: "latest"

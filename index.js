@@ -6,4 +6,4 @@ console.log("ESLint");
 console.log(`ESLint`);
 console.log(`ESLint${aaa}`);
 sub();
-aaa == bbb;
+aaa === bbb;

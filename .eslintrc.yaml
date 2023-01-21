@@ -1,9 +1,14 @@
+env:
+  es6: true # 対応環境をES6に
 rules:
   semi: ["error", "always"] # 文末のセミコロン
   quotes: ["error", "double", { "allowTemplateLiterals": true }] #ダブルクオートとテンプレートリテラルを使えるようにする
   no-console: [0]
   eqeqeq: ["error", "always"] # ===の強制
 parserOptions:
-  ecmaVersion: 6 # constとか``を使えるようにする
-  # ecmaVersion: "latest"
+  #   ecmaVersion: 6 # constとか``を使えるようにする
+  #   # ecmaVersion: "latest"
   sourceType: "module" # export importを使えるようにする
+  ecmaFeatures:
+    impliedStrict: true # strict modeを有効にする
+    # jsx: true # これでJSXの構文もフォローできるけどReactを使う場合はeslint-plugin-reactを使うべきとドキュメントに書いてある

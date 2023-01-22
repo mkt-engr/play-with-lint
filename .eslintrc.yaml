@@ -2,9 +2,7 @@ env:
   es6: true # 対応環境をES6に
 rules:
   # Rule一覧:https://eslint.org/docs/latest/rules/
-  # TODO:変数はlet かconstにする
   # TODO:importの順番をアルファベット順 or Reactは上にして残りはアルファベット順
-  # TODO:
   # ESLintが作成したルールの種類（https://eslint.org/docs/latest/rules/）
   # Possible Problems
   no-unused-vars: # 未使用変数の検知
@@ -49,6 +47,15 @@ rules:
         props: true, # bar.item = "change"とかも許さない。デフォはfalse
         ignorePropertyModificationsFor: ["hoge"], # hoge.item = "change"は許す
         ignorePropertyModificationsForRegex: ["^bar"], # 変更を許可する値を正規表現で書く
+      },
+    ]
+  one-var: [
+      error,
+      never,
+      {
+        var: always, # var:変数宣言は1つのスコープで１回だけ
+        let: never, # let:変数宣言は1つのスコープで何回でも
+        const: consecutive, # const: 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
       },
     ]
 

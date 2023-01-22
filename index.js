@@ -71,5 +71,7 @@ function _bar() {}
 function _foo(bar, bar2, hofe) {
   bar.prop = "value";
   bar2.props = "change";
-  hofe.props = "nomal";
+  // hofe.props = "nomal";
 }
+
+let a, b;

@@ -51,9 +51,9 @@ rules:
     ]
   one-var: [
       error,
-      never,
+      never, #（デフォはalways）
       {
-        var: always, # var:変数宣言は1つのスコープで１回だけ
+        var: always, # var:変数宣言は1つのスコープで１回だけ（デフォはalways）
         let: never, # let:変数宣言は1つのスコープで何回でも
         const: consecutive, # const: 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
       },

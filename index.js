@@ -75,3 +75,6 @@ function _foo(bar, bar2, hofe) {
 }
 
 let a, b;
+var c, d;
+const e = 10,
+  f = 3;

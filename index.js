@@ -74,7 +74,10 @@ function _foo(bar, bar2, hofe) {
   // hofe.props = "nomal";
 }
 
-let a, b;
-var c, d;
-const e = 10,
-  f = 3;
+let _as, _b;
+let _c, _d;
+let _ddd = 10;
+const _e = 10,
+  _f = 3;
+const _aaaad = 1234;
+const _fkwpergoker = 1234;

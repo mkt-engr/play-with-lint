@@ -51,11 +51,14 @@ rules:
     ]
   one-var: [
       error,
-      never, #（デフォはalways）
+      # never, #（デフォはalways）
       {
-        var: always, # var:変数宣言は1つのスコープで１回だけ（デフォはalways）
-        let: never, # let:変数宣言は1つのスコープで何回でも
-        const: consecutive, # const: 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
+        # var: always, # var:1つのスコープに1つの変数宣言
+        let: never, # let:1つのスコープに複数の変数宣言
+        const: never, # const:(consecutive) 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
+        # separateRequires: true, # neverと一緒に定義すると１行に１変数しか定義できない
+        # initialized: never, # 初期化された変数は１行で1つのスコープで
+        # uninitialized: always, # 初期化されてない変数は1つのスコープに複数の宣言
       },
     ]
 

@@ -7,12 +7,12 @@ const bbb = 222;
 // var eee = 123;
 
 //no-unused-vars: ["error", { "varsIgnorePattern": "[iI]gnored" }]で未使用変数を無視する設定に入っているので未使用でもエラーにならない
-var firstVarIgnored = 1;
+let firstVarIgnored = 1;
 
 //{ "varsIgnorePattern": "^_" }で変数の最初が_で始まるものは無視される
 //分割代入で使えそう
-var _first = 1;
-var __first = 1;
+let _first = 1;
+let __first = 1;
 const [_, __, destructured] = [1, 2, 100];
 console.log(destructured);
 
@@ -41,8 +41,25 @@ try {
 } catch (error) {
   console.log(error);
 }
-
+/* eslint-disable camelcase */
 const full_name = "makito mori";
+
 const FULL_NAME = "makito mori";
 
 console.log(full_name, FULL_NAME);
+
+// const _func01 = function () {
+//   console.log(ffff);
+// };
+
+function _func02() {
+  console.log("func02s");
+}
+_func02();
+
+const _func03 = () => {
+  console.log("func03");
+};
+
+let _a = 1;
+function _bar() {}

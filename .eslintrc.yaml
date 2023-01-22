@@ -53,15 +53,16 @@ rules:
       error,
       # never, #（デフォはalways）
       {
-        # var: always, # var:1つのスコープに1つの変数宣言
-        let: never, # let:1つのスコープに複数の変数宣言
-        const: never, # const:(consecutive) 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
-        # separateRequires: true, # neverと一緒に定義すると１行に１変数しか定義できない
+        # var: always, # var:1つのスコープに1つの変数宣言(varは１回しかかけない)
+        # let: never, # let:1つのスコープに複数の変数宣言(letを何回もかける)
+        const: never, # 1つのスコープに複数の変数宣言できる(constを何回もかける)
+        # const:(consecutive) 変数宣言は1つのスコープで何回でもOKやけど連続した変数宣言は1つにまとめる
+        # separateRequires: true, # require("lodash")と分ける。
         # initialized: never, # 初期化された変数は１行で1つのスコープで
         # uninitialized: always, # 初期化されてない変数は1つのスコープに複数の宣言
       },
     ]
-
+  one-var-declaration-per-line: [error, always] # こっちが１行に１変数しか定義できない
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   #   # ecmaVersion: "latest"

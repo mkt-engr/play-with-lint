@@ -65,6 +65,9 @@ rules:
   one-var-declaration-per-line: [error, always] # こっちが１行に１変数しか定義できない
   prefer-const: [error] # 再代入されない場合はconstを強制する
   prefer-object-has-own: [error] # Object.prototype.hasOwnProperty.call()の利用は禁止してObject.hasOwn()を使わせる
+  prefer-object-spread: [error] # object.assignを使わせずに...を強制する
+  prefer-promise-reject-errors: [error] # Promiseでrejectする際はErrorオブジェクトのみ許容する
+  require-await: [error] # async関数の中は必ずawaitを入れる
   yoda: [
       error,
       never, # Yoda構文を許可しない
@@ -75,7 +78,7 @@ rules:
     ]
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
-  #   # ecmaVersion: "latest"
+  ecmaVersion: "latest" # async,awaitを使うようにするにはこれが必要
   sourceType: module # export importを使えるようにする
   ecmaFeatures:
     impliedStrict: true # strict modeを有効にする

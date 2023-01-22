@@ -96,3 +96,11 @@ const obj = {
 };
 
 Object.prototype.hasOwnProperty.call(obj, "foo");
+
+Object.assign({}, obj);
+
+Promise.reject("something bad happened");
+
+async function _fetchData(processDataItem) {
+  console.log(processDataItem);
+}

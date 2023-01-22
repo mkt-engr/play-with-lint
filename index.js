@@ -13,7 +13,7 @@ let firstVarIgnored = 1;
 //分割代入で使えそう
 let _first = 1;
 let __first = 1;
-const [_, __, destructured] = [1, 2, 100];
+// const [_, __, destructured] = [1, 2, 100];
 console.log(destructured);
 
 console.log("ESLint");
@@ -63,3 +63,13 @@ const _func03 = () => {
 
 let _a = 1;
 function _bar() {}
+// var inOneHour = now + 60 * 60 * 1;
+
+// const _thing = foo ? bar : baz === qux ? quxx : foobar;
+// foo ? (baz === qux ? quxx() : foobar()) : bar();
+
+function _foo(bar, bar2, hofe) {
+  bar.prop = "value";
+  bar2.props = "change";
+  hofe.props = "nomal";
+}

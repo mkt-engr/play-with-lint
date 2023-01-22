@@ -41,6 +41,17 @@ rules:
   semi: [error, always] # 文末のセミコロン
   quotes: [error, double, { allowTemplateLiterals: true }] #ダブルクオートとテンプレートリテラルを使えるようにする
   no-var: [error] # varは許可しない。let,constのみ。 --fixでvarをletに変更できる
+  no-magic-numbers: [error, { ignore: [1] }] # マジックナンバーの不許可 ignoreで無視できる数を定義できる array.length-1とかはよく使うから1だけ無視するとか
+  no-nested-ternary: [error] # ネストされた３項演算子を許可しない
+  no-param-reassign: [
+      error,
+      {
+        props: true, # bar.item = "change"とかも許さない。デフォはfalse
+        ignorePropertyModificationsFor: ["hoge"], # hoge.item = "change"は許す
+        ignorePropertyModificationsForRegex: ["^bar"], # 変更を許可する値を正規表現で書く
+      },
+    ]
+
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   #   # ecmaVersion: "latest"

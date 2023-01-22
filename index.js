@@ -74,10 +74,25 @@ function _foo(bar, bar2, hofe) {
   // hofe.props = "nomal";
 }
 
-let _as, _b;
-let _c, _d;
+// let _as, _b;
+// let _c, _d;
 let _ddd = 10;
-const _e = 10,
-  _f = 3;
+// const _e = 10,
+//   _f = 3;
 const _aaaad = 1234;
 const _fkwpergoker = 1234;
+
+//Yoda構文
+if (10 === _ddd) {
+  console.log("");
+  console.log("a");
+}
+
+// eslint-disable-next-line no-magic-numbers
+if (0 < _ddd && _ddd < 100) console.log("");
+
+const obj = {
+  foo: "mori",
+};
+
+Object.prototype.hasOwnProperty.call(obj, "foo");

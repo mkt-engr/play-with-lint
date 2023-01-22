@@ -63,6 +63,16 @@ rules:
       },
     ]
   one-var-declaration-per-line: [error, always] # こっちが１行に１変数しか定義できない
+  prefer-const: [error] # 再代入されない場合はconstを強制する
+  prefer-object-has-own: [error] # Object.prototype.hasOwnProperty.call()の利用は禁止してObject.hasOwn()を使わせる
+  yoda: [
+      error,
+      never, # Yoda構文を許可しない
+      {
+        exceptRange: true, #  trueなら0 < number && number < 100は許す (デフォはfalse)
+        onlyEquality: false, # trueならYodaルールは===or==の式のみ検知する（デフォはfalse）
+      },
+    ]
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   #   # ecmaVersion: "latest"

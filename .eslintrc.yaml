@@ -68,6 +68,7 @@ rules:
   prefer-object-spread: [error] # object.assignを使わせずに...を強制する
   prefer-promise-reject-errors: [error] # Promiseでrejectする際はErrorオブジェクトのみ許容する
   require-await: [error] # async関数の中は必ずawaitを入れる
+  sort-imports: [error]
   yoda: [
       error,
       never, # Yoda構文を許可しない
@@ -85,3 +86,7 @@ parserOptions:
     # jsx: true # これでJSXの構文もフォローできるけどReactを使う場合はeslint-plugin-reactを使うべきとドキュメントに書いてある
 noInlineConfig: false # インラインで書いたルールをすべて無効化する（厳しいからTrueにすることはなさそう）
 reportUnusedDisableDirectives: true # 未使用のeslint-disableコメントがあれば通知する
+overrides:
+  - files: ["index.js"]
+    rules:
+      sort-imports: [0] # index.jsだけimportのソートのルールを課さない

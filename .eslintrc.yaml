@@ -68,7 +68,25 @@ rules:
   prefer-object-spread: [error] # object.assignを使わせずに...を強制する
   prefer-promise-reject-errors: [error] # Promiseでrejectする際はErrorオブジェクトのみ許容する
   require-await: [error] # async関数の中は必ずawaitを入れる
-  sort-imports: [error]
+  sort-imports: [
+      error,
+      {
+        ignoreCase: false, # trueの場合はimportの大文字小文字を区別しない
+        ignoreDeclarationSort: false, # trueの場合importの宣言文の並び替えを無視する
+        ignoreMemberSort: false, # trueの場合複数メンバーインポート宣言内のメンバーソートを無視する。import {b, a, c} from 'foo.js'でもOK
+        memberSyntaxSortOrder: [ # ソートの順番
+            none, # import "fefefe.js"みたいなやつ
+            all, # import * as b from "bar.js"
+            multiple, # import z from "zod" みたいなやつ
+            single, # import { aa,bb } from "lodash" みたいなやつ
+          ],
+        allowSeparatedGroups: false, # trueにすると
+        # 1行空白、コメント、関数の実行があるとソートの順番がリセットされて以下のようなものが許される import {a,b} from "fefefe.js"とかの中括弧でimportする方は関係ない
+        # import f from "./importFolder/e";
+        #
+        # import e from "./importFolder/d";
+      },
+    ]
   yoda: [
       error,
       never, # Yoda構文を許可しない

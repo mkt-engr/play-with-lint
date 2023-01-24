@@ -35,9 +35,6 @@ rules:
     ]
   func-style: [error, declaration, { allowArrowFunctions: true }]
   logical-assignment-operators: [error, always]
-  # Layout & Formatting（これらのルールは、コードがどのように実行されるかよりも、コードがどのように見えるかを気にします。）
-  semi: [error, always] # 文末のセミコロン
-  quotes: [error, double, { allowTemplateLiterals: true }] #ダブルクオートとテンプレートリテラルを使えるようにする
   no-var: [error] # varは許可しない。let,constのみ。 --fixでvarをletに変更できる
   no-magic-numbers: [error, { ignore: [1] }] # マジックナンバーの不許可 ignoreで無視できる数を定義できる array.length-1とかはよく使うから1だけ無視するとか
   no-nested-ternary: [error] # ネストされた３項演算子を許可しない
@@ -95,6 +92,11 @@ rules:
         onlyEquality: false, # trueならYodaルールは===or==の式のみ検知する（デフォはfalse）
       },
     ]
+  # Layout & Formatting（これらのルールは、コードがどのように実行されるかよりも、コードがどのように見えるかを気にします。）
+  semi: [error, always] # 文末のセミコロン
+  quotes: [error, double, { allowTemplateLiterals: true }] #ダブルクオートとテンプレートリテラルを使えるようにする
+  # TODO:https://eslint.org/docs/latest/rules/#layout--formattingを見る
+  array-bracket-spacing: [error, always] # 配列の[と]の直後にはスペースを入れる
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   ecmaVersion: "latest" # async,awaitを使うようにするにはこれが必要

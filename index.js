@@ -104,3 +104,6 @@ Promise.reject("something bad happened");
 async function _fetchData(processDataItem) {
   console.log(processDataItem);
 }
+
+// eslint-disable-next-line no-magic-numbers
+const _arr01 = [1, 2, 3];

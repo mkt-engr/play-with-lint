@@ -96,6 +96,12 @@ rules:
   quotes: [error, double, { allowTemplateLiterals: true }] #ダブルクオートとテンプレートリテラルを使えるようにする
   # TODO:https://eslint.org/docs/latest/rules/#layout--formattingを見る
   array-bracket-spacing: [error, always] # 配列の[と]の直後にはスペースを入れる
+  arrow-parens: [
+      error,
+      # always, # 引数には常に（）をつける
+      as-needed, # アロー関数の引数が１個の時だけ引数の（）を省略できる
+      requireForBlockBody: true, #
+    ]
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   ecmaVersion: "latest" # async,awaitを使うようにするにはこれが必要

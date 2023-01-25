@@ -107,3 +107,10 @@ async function _fetchData(processDataItem) {
 
 // eslint-disable-next-line no-magic-numbers
 const _arr01 = [1, 2, 3];
+
+const _arrowFunc = (e) => {
+  console.log(e);
+};
+a.map((x) => {
+  return x * x;
+});

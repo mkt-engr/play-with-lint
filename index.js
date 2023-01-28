@@ -114,3 +114,8 @@ const _arrowFunc = (e) => {
 a.map((x) => {
   return x * x;
 });
+
+if (true) {
+  console.log(1);
+  console.log(1);
+}

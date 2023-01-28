@@ -102,6 +102,12 @@ rules:
       as-needed, # アロー関数の引数が１個の時だけ引数の（）を省略できる
       requireForBlockBody: true, #
     ]
+  brace-style: [
+      error,
+      1tbs, #ブロックの開始ブレースを対応する文や宣言と同じ行に配置する
+      # stroustrup # if-else構文のelse文、catch、finallyは、直前の閉じ中括弧の後に独立した行に記述する必要がある。
+      # allman # すべての中括弧は余分なインデントなしに独立した行にする
+    ]
 parserOptions:
   #   ecmaVersion: 6 # constとか``を使えるようにする
   ecmaVersion: "latest" # async,awaitを使うようにするにはこれが必要
